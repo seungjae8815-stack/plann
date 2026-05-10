@@ -1,70 +1,62 @@
-// Header scroll effect
+// Header scroll shadow
 const header = document.getElementById('header');
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 20) {
-    header.classList.add('scrolled');
-  } else {
-    header.classList.remove('scrolled');
-  }
+  header.classList.toggle('scrolled', window.scrollY > 10);
 });
 
-// Mobile menu toggle
-const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-const mobileNav = document.getElementById('mobileNav');
-mobileMenuBtn.addEventListener('click', () => {
-  mobileNav.classList.toggle('open');
+// Mobile hamburger
+const hamBtn = document.getElementById('hamBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
 });
-mobileNav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => mobileNav.classList.remove('open'));
+mobileMenu.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
 });
 
-// Smooth scroll for nav links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      const offset = 80;
-      const top = target.getBoundingClientRect().top + window.scrollY - offset;
-      window.scrollTo({ top, behavior: 'smooth' });
-    }
+// Smooth scroll offset for fixed header
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id === '#') return;
+    const target = document.querySelector(id);
+    if (!target) return;
+    e.preventDefault();
+    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
   });
 });
 
-// Fade-up animation on scroll
-const fadeEls = document.querySelectorAll(
-  '.about-card, .service-card, .promise-card, .strength-item, .strengths-logo-row, .section-header, .section-header-white'
+// Scroll reveal
+const revealEls = document.querySelectorAll(
+  '.svc-card, .promise-card, .str-card, .guide-card, .sec-hd, .guide-left, .strengths-top'
 );
-fadeEls.forEach(el => el.classList.add('fade-up'));
+revealEls.forEach(el => el.classList.add('reveal'));
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach((entry, i) => {
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
     if (entry.isIntersecting) {
-      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      entry.target.classList.add('visible');
       observer.unobserve(entry.target);
     }
   });
-}, { threshold: 0.12 });
+}, { threshold: 0.1 });
 
-fadeEls.forEach(el => observer.observe(el));
+revealEls.forEach(el => observer.observe(el));
 
-// Staggered card animation
-const cardGroups = [
-  document.querySelectorAll('.about-card'),
-  document.querySelectorAll('.service-card'),
-  document.querySelectorAll('.promise-card'),
-  document.querySelectorAll('.strength-item'),
-];
-cardGroups.forEach(group => {
-  const groupObserver = new IntersectionObserver(entries => {
+// Stagger cards within each grid
+['.svc-grid', '.promise-grid', '.strengths-grid'].forEach(sel => {
+  const grid = document.querySelector(sel);
+  if (!grid) return;
+  const cards = grid.querySelectorAll('.reveal');
+  const gridObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        group.forEach((card, i) => {
-          setTimeout(() => card.classList.add('visible'), i * 100);
+        cards.forEach((card, i) => {
+          setTimeout(() => card.classList.add('visible'), i * 90);
         });
-        groupObserver.disconnect();
+        gridObserver.disconnect();
       }
     });
-  }, { threshold: 0.08 });
-  if (group.length > 0) groupObserver.observe(group[0]);
+  }, { threshold: 0.05 });
+  if (cards.length) gridObserver.observe(grid);
 });
