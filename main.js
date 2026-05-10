@@ -22,7 +22,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     const target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
-    const top = target.getBoundingClientRect().top + window.scrollY - 76;
+    const top = target.getBoundingClientRect().top + window.scrollY - 112;
     window.scrollTo({ top, behavior: 'smooth' });
   });
 });

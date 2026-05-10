@@ -12,236 +12,278 @@
 <body>
 
 <!-- ===================================================
-     HEADER
+     HEADER  ─  투명 배경 + 흰색 플로팅 카드
 =================================================== -->
 <header class="header" id="header">
-  <div class="header-wrap">
+  <div class="header-outer">
+    <!-- 흰색 플로팅 카드: 로고(좌) + 메뉴(우) -->
+    <div class="header-card">
 
-    <!-- 로고 -->
-    <a href="#" class="header-logo">
-      <img src="logo1.png" alt="plan.n" />
-    </a>
+      <!-- 로고: pn 마크 + plan.n 텍스트 -->
+      <a href="#" class="header-logo">
+        <img src="logo1.png" alt="plan.n 로고마크" />
+        <span class="logo-text">plan.n</span>
+      </a>
 
-    <!-- 네비게이션 박스 -->
-    <div class="gnb-box">
+      <!-- 네비게이션 (카드 오른쪽) -->
       <ul class="gnb-list">
-        <li class="gnb-item is-active"><a href="#">홈</a></li>
-        <li class="gnb-item"><a href="#about">회사소개</a></li>
-        <li class="gnb-item"><a href="#services">주요 서비스</a></li>
-        <li class="gnb-item"><a href="#guide">성공 사례</a></li>
-        <li class="gnb-item"><a href="#strengths">파트너스</a></li>
-        <li class="gnb-item"><a href="#">이용약관</a></li>
-        <li class="gnb-item"><a href="#">채용</a></li>
+        <li class="gnb-item is-active"><a href="#home">HOME</a></li>
+        <li class="gnb-item"><a href="#services">서비스 소개</a></li>
+        <li class="gnb-item"><a href="#promise">기술 역량</a></li>
+        <li class="gnb-item"><a href="#guide">운영 프로세스</a></li>
+        <li class="gnb-item"><a href="#strengths">회사소개</a></li>
+        <li class="gnb-item"><a href="#contact">문의하기</a></li>
       </ul>
+
+      <!-- 모바일 햄버거 -->
+      <button class="ham-btn" id="hamBtn" aria-label="메뉴열기">
+        <span></span><span></span><span></span>
+      </button>
+
     </div>
-
-    <!-- 우측 버튼 -->
-    <div class="header-right">
-      <a href="mailto:plann@iplann.co.kr" class="btn-contact">이메일 문의</a>
-    </div>
-
-    <!-- 모바일 햄버거 -->
-    <button class="ham-btn" id="hamBtn" aria-label="메뉴열기">
-      <span></span><span></span><span></span>
-    </button>
-
   </div>
 
   <!-- 모바일 드로어 -->
   <nav class="mobile-nav" id="mobileNav">
     <ul>
-      <li><a href="#">홈</a></li>
-      <li><a href="#about">회사소개</a></li>
-      <li><a href="#services">주요 서비스</a></li>
-      <li><a href="#guide">성공 사례</a></li>
-      <li><a href="#strengths">파트너스</a></li>
-      <li><a href="#">이용약관</a></li>
-      <li><a href="#">채용</a></li>
-      <li><a href="mailto:plann@iplann.co.kr">이메일 문의</a></li>
+      <li><a href="#home">HOME</a></li>
+      <li><a href="#services">서비스 소개</a></li>
+      <li><a href="#promise">기술 역량</a></li>
+      <li><a href="#guide">운영 프로세스</a></li>
+      <li><a href="#strengths">회사소개</a></li>
+      <li><a href="#contact">문의하기</a></li>
     </ul>
   </nav>
 </header>
 
 <!-- ===================================================
-     HERO  ─  hero-visual.png 전체 배경 / 텍스트 오버레이
+     HERO  ─  hero-visual.png 전체 배경 + 텍스트 오버레이
 =================================================== -->
 <section class="hero" id="home">
   <div class="hero-inner">
-
-    <!-- 왼쪽 텍스트 블록 -->
     <div class="hero-content">
-      <p class="hero-eyebrow">DB의 구축 · 이전 · 운영과 DBA 대행</p>
+
+      <!-- 메인 헤딩 (크게, 굵게) -->
       <h1 class="hero-title">안정적인<br>데이터베이스 운영의 시작</h1>
-      <p class="hero-desc">기업이 찾고 필요로하는 것에 대한 해결책을<br>제공해 드립니다.</p>
 
-      <!-- CTA 버튼 2개 -->
-      <div class="hero-cta">
-        <a href="#services" class="btn-hero-primary">서비스 소개</a>
-        <a href="mailto:plann@iplann.co.kr" class="btn-hero-outline">서비스 문의하기</a>
-      </div>
+      <!-- 설명 문구 -->
+      <p class="hero-desc">
+        DB 운영 · 구축 · 성능 튜닝 전문 서비스<br>
+        기업의 핵심 데이터를 안정적으로 운영합니다.
+      </p>
 
-      <!-- 하단 4개 아이콘 타일 -->
-      <div class="hero-tiles">
+      <!-- 버튼 1개 -->
+      <a href="#contact" class="btn-service-inquiry">
+        서비스 문의하기
+        <span class="btn-arrow">
+          <svg viewBox="0 0 16 16" fill="none">
+            <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
 
-        <div class="hero-tile">
-          <div class="htile-icon" style="background:#E8F0FE">
-            <svg viewBox="0 0 24 24" fill="none">
-              <ellipse cx="12" cy="7" rx="8" ry="3" stroke="#1B56DB" stroke-width="1.6"/>
-              <path d="M4 7v5c0 1.657 3.582 3 8 3s8-1.343 8-3V7" stroke="#1B56DB" stroke-width="1.6"/>
-              <path d="M4 12v5c0 1.657 3.582 3 8 3s8-1.343 8-3v-5" stroke="#1B56DB" stroke-width="1.6"/>
+      <!-- 하단 4개 아이콘 + 구분선 -->
+      <div class="hero-icons">
+
+        <!-- 전문 기술력 : 기어 아이콘 -->
+        <div class="hero-icon-item">
+          <div class="hicon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/>
             </svg>
           </div>
-          <span>DB 관리</span>
+          <span>전문 기술력</span>
         </div>
 
-        <div class="hero-tile">
-          <div class="htile-icon" style="background:#E0F2FE">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path d="M5 12h14M14 7l5 5-5 5" stroke="#0EA5C9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        <span class="icon-divider"></span>
+
+        <!-- 빠른 장애 대응 : 시계 아이콘 -->
+        <div class="hero-icon-item">
+          <div class="hicon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M12 7v5l3 2"/>
             </svg>
           </div>
-          <span>마이그레이션</span>
+          <span>빠른 장애 대응</span>
         </div>
 
-        <div class="hero-tile">
-          <div class="htile-icon" style="background:#EDE9FE">
-            <svg viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="12" r="8" stroke="#7C3AED" stroke-width="1.6"/>
-              <path d="M12 8v4l3 3" stroke="#7C3AED" stroke-width="1.6" stroke-linecap="round"/>
+        <span class="icon-divider"></span>
+
+        <!-- 안정적인 운영 : 쉴드+체크 아이콘 -->
+        <div class="hero-icon-item">
+          <div class="hicon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              <path d="M9 12l2 2 4-4"/>
             </svg>
           </div>
-          <span>이슈 해결</span>
+          <span>안정적인 운영</span>
         </div>
 
-        <div class="hero-tile">
-          <div class="htile-icon" style="background:#E0FDF4">
-            <svg viewBox="0 0 24 24" fill="none">
-              <circle cx="12" cy="8" r="4" stroke="#059669" stroke-width="1.6"/>
-              <path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#059669" stroke-width="1.6" stroke-linecap="round"/>
+        <span class="icon-divider"></span>
+
+        <!-- 맞춤형 서비스 : 문서 아이콘 -->
+        <div class="hero-icon-item">
+          <div class="hicon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#4B5563" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+              <path d="M14 2v6h6M16 13H8M16 17H8M10 9H8"/>
             </svg>
           </div>
-          <span>전문 지원</span>
+          <span>맞춤형 서비스</span>
         </div>
 
-      </div><!-- /hero-tiles -->
+      </div><!-- /hero-icons -->
     </div><!-- /hero-content -->
-
   </div><!-- /hero-inner -->
 </section>
 
 <!-- ===================================================
-     핵심 서비스
+     핵심 서비스  ─  4컬럼 세로 카드
 =================================================== -->
-<section class="sec-white" id="services">
+<section class="sec-services" id="services">
   <div class="inner">
     <div class="sec-head center">
+      <p class="sec-eyebrow">OUR SERVICES</p>
       <h2>핵심 서비스</h2>
-      <p>플렌엔이 제공하는 전문화된 서비스를 통해<br>비즈니스의 모든 단계에서 최적의 솔루션을 경험하세요.</p>
     </div>
 
     <div class="svc-grid">
 
-      <!-- 카드 1 -->
+      <!-- 카드 1: DB 운영 및 유지보수 -->
       <div class="svc-card">
-        <div class="svc-icon-wrap">
-          <div class="svc-icon bg-blue1">
-            <svg viewBox="0 0 28 28" fill="none">
-              <ellipse cx="14" cy="9" rx="8.5" ry="3.5" stroke="#1B56DB" stroke-width="1.6"/>
-              <path d="M5.5 9v5c0 1.93 3.81 3.5 8.5 3.5s8.5-1.57 8.5-3.5V9" stroke="#1B56DB" stroke-width="1.6"/>
-              <path d="M5.5 14v5c0 1.93 3.81 3.5 8.5 3.5s8.5-1.57 8.5-3.5v-5" stroke="#1B56DB" stroke-width="1.6"/>
-            </svg>
-          </div>
+        <div class="svc-img-wrap">
+          <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g1a" x1="20" y1="10" x2="90" y2="50" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E8F2FF"/>
+                <stop offset="100%" stop-color="#A8C8F8"/>
+              </linearGradient>
+              <linearGradient id="g1b" x1="20" y1="50" x2="90" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C4DEFF"/>
+                <stop offset="100%" stop-color="#7BAEE8"/>
+              </linearGradient>
+            </defs>
+            <!-- 서버 박스 3단 -->
+            <rect x="18" y="14" width="74" height="22" rx="6" fill="url(#g1a)" stroke="#9DC4F0" stroke-width="1.2"/>
+            <circle cx="28" cy="25" r="4" fill="#7BAEE8" opacity=".7"/>
+            <circle cx="40" cy="25" r="4" fill="#7BAEE8" opacity=".5"/>
+            <rect x="50" y="21" width="34" height="8" rx="2" fill="#B8D4F8" opacity=".8"/>
+            <rect x="18" y="42" width="74" height="22" rx="6" fill="url(#g1a)" stroke="#9DC4F0" stroke-width="1.2"/>
+            <circle cx="28" cy="53" r="4" fill="#5A92D8" opacity=".7"/>
+            <circle cx="40" cy="53" r="4" fill="#7BAEE8" opacity=".5"/>
+            <rect x="50" y="49" width="34" height="8" rx="2" fill="#B8D4F8" opacity=".8"/>
+            <rect x="18" y="70" width="74" height="22" rx="6" fill="url(#g1b)" stroke="#9DC4F0" stroke-width="1.2"/>
+            <circle cx="28" cy="81" r="4" fill="#5A92D8" opacity=".7"/>
+            <circle cx="40" cy="81" r="4" fill="#7BAEE8" opacity=".5"/>
+            <rect x="50" y="77" width="34" height="8" rx="2" fill="#C8DCFF" opacity=".8"/>
+          </svg>
         </div>
         <div class="svc-body">
-          <h3>DB 관리 및 모니터링</h3>
-          <p>24시간 실시간 모니터링과 체계적 관리로 안정적인 DB 운영환경을 유지합니다.</p>
+          <h3>DB 운영 및 유지보수</h3>
+          <p>정기 점검과 모니터링을 통해<br>안정적인 운영 환경을 제공합니다.</p>
         </div>
+        <span class="svc-arrow">→</span>
       </div>
 
-      <!-- 카드 2 -->
+      <!-- 카드 2: 구축 및 마이그레이션 -->
       <div class="svc-card">
-        <div class="svc-icon-wrap">
-          <div class="svc-icon bg-blue2">
-            <svg viewBox="0 0 28 28" fill="none">
-              <rect x="3" y="5" width="9" height="7" rx="1.5" stroke="#1B56DB" stroke-width="1.6"/>
-              <rect x="16" y="16" width="9" height="7" rx="1.5" stroke="#1B56DB" stroke-width="1.6"/>
-              <path d="M12 8.5h2a2 2 0 012 2V13" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M14 11l2 2-2 2" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M16 19.5h-2a2 2 0 01-2-2V15" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M14 17l-2-2 2-2" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+        <div class="svc-img-wrap">
+          <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g2a" x1="0" y1="0" x2="1" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0%" stop-color="#D8ECFF"/>
+                <stop offset="100%" stop-color="#90BEF0"/>
+              </linearGradient>
+              <linearGradient id="g2b" x1="0" y1="0" x2="0" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0%" stop-color="#B0D4FF"/>
+                <stop offset="100%" stop-color="#6898D8"/>
+              </linearGradient>
+            </defs>
+            <!-- 큐브 3개 아이소메트릭 -->
+            <!-- 뒤 큐브 -->
+            <polygon points="55,12 80,26 80,54 55,40" fill="url(#g2a)" stroke="#8BBAE8" stroke-width="1"/>
+            <polygon points="30,26 55,12 55,40 30,54" fill="#C8DCFF" stroke="#8BBAE8" stroke-width="1"/>
+            <polygon points="30,54 55,40 80,54 55,68" fill="#A0C4F0" stroke="#8BBAE8" stroke-width="1"/>
+            <!-- 앞 큐브 (왼쪽 아래) -->
+            <polygon points="20,58 45,44 45,72 20,86" fill="#C8DCFF" stroke="#8BBAE8" stroke-width="1"/>
+            <polygon points="20,86 45,72 45,100 20,100" fill="#A0C8F8" stroke="#8BBAE8" stroke-width="1"/>
+            <!-- 앞 큐브 (오른쪽 아래) -->
+            <polygon points="65,44 90,58 90,86 65,72" fill="url(#g2a)" stroke="#8BBAE8" stroke-width="1"/>
+            <polygon points="65,72 90,86 90,100 65,100" fill="#A0C8F8" stroke="#8BBAE8" stroke-width="1"/>
+          </svg>
         </div>
         <div class="svc-body">
-          <h3>주기적 DB 마이그레이션</h3>
-          <p>안전한 데이터 이전 절차로 손실 없는 체계적인 마이그레이션을 진행합니다.</p>
+          <h3>구축 및 마이그레이션</h3>
+          <p>신규 구축부터 데이터 이전까지<br>안정적으로 지원합니다.</p>
         </div>
+        <span class="svc-arrow">→</span>
       </div>
 
-      <!-- 카드 3 -->
+      <!-- 카드 3: 성능 튜닝 -->
       <div class="svc-card">
-        <div class="svc-icon-wrap">
-          <div class="svc-icon bg-blue3">
-            <svg viewBox="0 0 28 28" fill="none">
-              <path d="M20.5 7.5L7.5 20.5M9 7h5.5L16 8.5l-2 2.5H9v-4z" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-              <path d="M19 13l-4 4 1.5 3 4.5-4.5L19 13z" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
+        <div class="svc-img-wrap">
+          <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g3a" x1="10" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E0EEFF"/>
+                <stop offset="100%" stop-color="#8BBAF0"/>
+              </linearGradient>
+            </defs>
+            <!-- 속도계 원판 -->
+            <circle cx="55" cy="60" r="40" fill="url(#g3a)" stroke="#9DC4F0" stroke-width="1.5"/>
+            <circle cx="55" cy="60" r="32" fill="white" fill-opacity=".5" stroke="#B8D0F0" stroke-width="1"/>
+            <!-- 눈금 -->
+            <line x1="20" y1="60" x2="28" y2="60" stroke="#8BBAE8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="90" y1="60" x2="82" y2="60" stroke="#8BBAE8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="55" y1="25" x2="55" y2="33" stroke="#8BBAE8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="26" y1="35" x2="32" y2="40" stroke="#8BBAE8" stroke-width="1.5" stroke-linecap="round"/>
+            <line x1="84" y1="35" x2="78" y2="40" stroke="#8BBAE8" stroke-width="1.5" stroke-linecap="round"/>
+            <!-- 바늘 (오른쪽 기울기 = 빠름) -->
+            <line x1="55" y1="60" x2="76" y2="36" stroke="#2563EB" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="55" cy="60" r="5" fill="#4B87E0" stroke="white" stroke-width="2"/>
+            <!-- 상단 라벨 -->
+            <text x="55" y="82" text-anchor="middle" font-size="9" fill="#5B85C8" font-weight="600">SPEED</text>
+          </svg>
         </div>
         <div class="svc-body">
-          <h3>이슈 해결</h3>
-          <p>전문가가 장애를 신속히 감지하고 근본 원인을 분석하여 즉시 대응합니다.</p>
+          <h3>성능 튜닝</h3>
+          <p>병목 분석과 성능 최적화를 통해<br>시스템 효율을 개선합니다.</p>
         </div>
+        <span class="svc-arrow">→</span>
       </div>
 
-      <!-- 카드 4 -->
+      <!-- 카드 4: 장애 대응 -->
       <div class="svc-card">
-        <div class="svc-icon-wrap">
-          <div class="svc-icon bg-blue4">
-            <svg viewBox="0 0 28 28" fill="none">
-              <circle cx="14" cy="10" r="4.5" stroke="#1B56DB" stroke-width="1.6"/>
-              <path d="M6 24c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
+        <div class="svc-img-wrap">
+          <svg viewBox="0 0 110 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="g4a" x1="15" y1="8" x2="95" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#DCE8FF"/>
+                <stop offset="100%" stop-color="#88B4F0"/>
+              </linearGradient>
+              <linearGradient id="g4b" x1="15" y1="8" x2="95" y2="100" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#C0D8FF"/>
+                <stop offset="100%" stop-color="#6898D8"/>
+              </linearGradient>
+            </defs>
+            <!-- 방패 외형 -->
+            <path d="M55 10 L88 24 L88 58 C88 78 55 100 55 100 C55 100 22 78 22 58 L22 24 Z"
+              fill="url(#g4a)" stroke="#9DC4F0" stroke-width="1.5"/>
+            <!-- 방패 내부 레이어 -->
+            <path d="M55 20 L80 32 L80 57 C80 73 55 90 55 90 C55 90 30 73 30 57 L30 32 Z"
+              fill="url(#g4b)" stroke="#B0CCF0" stroke-width="1"/>
+            <!-- 체크 마크 -->
+            <path d="M40 57 L50 67 L70 45" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
         <div class="svc-body">
-          <h3>전문 지원</h3>
-          <p>DBA 전문가가 1:1로 직접 지원하여 기업의 모든 요구사항을 해결합니다.</p>
+          <h3>장애 대응</h3>
+          <p>긴급 장애 발생 시 빠른 원인 분석과<br>복구를 지원합니다.</p>
         </div>
-      </div>
-
-      <!-- 카드 5 -->
-      <div class="svc-card">
-        <div class="svc-icon-wrap">
-          <div class="svc-icon bg-blue1">
-            <svg viewBox="0 0 28 28" fill="none">
-              <path d="M7 18c0-3.866 3.134-7 7-7s7 3.134 7 7" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M4.5 20c0 1.38 1.12 2 2.1 2h14.8c.98 0 2.1-.62 2.1-2" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M14 11V8M10 12.5L8.5 10M18 12.5L19.5 10" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-          </div>
-        </div>
-        <div class="svc-body">
-          <h3>클라우드 최적화</h3>
-          <p>클라우드 환경에 최적화된 DB 설계와 운영으로 비용 효율을 극대화합니다.</p>
-        </div>
-      </div>
-
-      <!-- 카드 6 -->
-      <div class="svc-card">
-        <div class="svc-icon-wrap">
-          <div class="svc-icon bg-blue2">
-            <svg viewBox="0 0 28 28" fill="none">
-              <circle cx="14" cy="14" r="8" stroke="#1B56DB" stroke-width="1.6"/>
-              <path d="M14 9v5l3 3" stroke="#1B56DB" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="M9.5 5.5l-2-2M18.5 5.5l2-2M23.5 10.5l2-2" stroke="#1B56DB" stroke-width="1.5" stroke-linecap="round" opacity=".45"/>
-            </svg>
-          </div>
-        </div>
-        <div class="svc-body">
-          <h3>성능 최적화</h3>
-          <p>쿼리 튜닝, 인덱스 최적화 등 전문적인 성능 개선으로 처리 속도를 향상합니다.</p>
-        </div>
+        <span class="svc-arrow">→</span>
       </div>
 
     </div>
@@ -249,51 +291,143 @@
 </section>
 
 <!-- ===================================================
-     플렌엔의 약속
+     플렌엔의 약속  ─  3단계 플로우
 =================================================== -->
-<section class="sec-gray" id="promise">
+<section class="sec-promise" id="promise">
   <div class="inner">
     <div class="sec-head center">
+      <p class="sec-eyebrow">OUR PHILOSOPHY</p>
       <h2>플렌엔의 약속</h2>
-      <p>고객의 신뢰를 최우선으로, 플렌엔은 다음 세 가지 약속을 반드시 지켜나갑니다.</p>
+      <p>안정성과 성능을 기반으로 고객의 비즈니스 연속성과 성장을 지원합니다.</p>
     </div>
 
-    <div class="promise-grid">
+    <div class="promise-flow">
 
-      <div class="promise-card">
-        <div class="promise-logo-area">
-          <img src="logo2.png" alt="plan.n" class="p-logo" />
+      <!-- Step 1 -->
+      <div class="promise-step">
+        <div class="promise-img">
+          <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pa1" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#D8E8FF"/>
+                <stop offset="100%" stop-color="#9DC4F8"/>
+              </linearGradient>
+              <linearGradient id="pa2" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#B0CCFF"/>
+                <stop offset="100%" stop-color="#6898E0"/>
+              </linearGradient>
+            </defs>
+            <!-- pn 글자 실루엣 -->
+            <rect x="20" y="30" width="28" height="80" rx="8" fill="url(#pa1)" opacity=".9"/>
+            <ellipse cx="48" cy="58" rx="20" ry="20" fill="url(#pa2)" opacity=".85"/>
+            <rect x="68" y="30" width="28" height="80" rx="8" fill="url(#pa1)" opacity=".9"/>
+            <rect x="96" y="30" width="24" height="80" rx="8" fill="url(#pa2)" opacity=".85"/>
+            <!-- 연결 점 -->
+            <circle cx="30" cy="120" r="5" fill="#6898E0" opacity=".6"/>
+            <circle cx="70" cy="128" r="4" fill="#9DC4F8" opacity=".5"/>
+            <circle cx="110" cy="120" r="5" fill="#6898E0" opacity=".6"/>
+          </svg>
         </div>
-        <div class="promise-divider"></div>
-        <div class="promise-content">
-          <p class="p-en">Seamless System<br>Integration</p>
-          <p class="p-ko">원활한 시스템 통합</p>
-          <p class="p-desc">고객의 기존 환경과 자연스럽게 연동되는 완벽한 통합 솔루션을 제공합니다.</p>
-        </div>
+        <h3>Seamless System<br>Integration</h3>
+        <p>시스템 통합과 운영 프로세스를<br>효율적으로 연결합니다.</p>
       </div>
 
-      <div class="promise-card">
-        <div class="promise-logo-area">
-          <img src="logo2.png" alt="plan.n" class="p-logo p-logo-alt" />
-        </div>
-        <div class="promise-divider"></div>
-        <div class="promise-content">
-          <p class="p-en">Optimized<br>Performance</p>
-          <p class="p-ko">최적화된 성능</p>
-          <p class="p-desc">지속적인 모니터링과 개선을 통해 항상 최고 수준의 성능을 유지합니다.</p>
-        </div>
+      <!-- 화살표 -->
+      <div class="promise-arrow">
+        <svg viewBox="0 0 48 24" fill="none" width="48" height="24">
+          <path d="M2 12h40M34 4l8 8-8 8" stroke="#A0B4D0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
       </div>
 
-      <div class="promise-card">
-        <div class="promise-logo-area">
-          <img src="logo2.png" alt="plan.n" class="p-logo" />
+      <!-- Step 2 -->
+      <div class="promise-step">
+        <div class="promise-img">
+          <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pb1" x1="10" y1="20" x2="130" y2="130" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#E0EEFF"/>
+                <stop offset="100%" stop-color="#8BBAF0"/>
+              </linearGradient>
+            </defs>
+            <circle cx="70" cy="75" r="52" fill="url(#pb1)" stroke="#B8D0F0" stroke-width="1.5"/>
+            <circle cx="70" cy="75" r="40" fill="white" fill-opacity=".55" stroke="#C4DCFF" stroke-width="1"/>
+            <!-- 눈금 -->
+            <line x1="22" y1="75" x2="32" y2="75" stroke="#7BAEE8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="118" y1="75" x2="108" y2="75" stroke="#7BAEE8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="70" y1="28" x2="70" y2="38" stroke="#7BAEE8" stroke-width="2.5" stroke-linecap="round"/>
+            <line x1="35" y1="44" x2="42" y2="51" stroke="#7BAEE8" stroke-width="2" stroke-linecap="round"/>
+            <line x1="105" y1="44" x2="98" y2="51" stroke="#7BAEE8" stroke-width="2" stroke-linecap="round"/>
+            <!-- 바늘 -->
+            <line x1="70" y1="75" x2="96" y2="45" stroke="#2563EB" stroke-width="4" stroke-linecap="round"/>
+            <circle cx="70" cy="75" r="7" fill="#4B87E0" stroke="white" stroke-width="2.5"/>
+            <text x="70" y="102" text-anchor="middle" font-size="11" fill="#6898D0" font-weight="700" font-family="sans-serif">PERFORMANCE</text>
+          </svg>
         </div>
-        <div class="promise-divider"></div>
-        <div class="promise-content">
-          <p class="p-en">Future-Proof<br>Solution</p>
-          <p class="p-ko">미래 지향적 솔루션</p>
-          <p class="p-desc">변화하는 시장 환경에 대응하는 확장 가능하고 지속 가능한 솔루션을 설계합니다.</p>
+        <h3>Optimized<br>Performance</h3>
+        <p>성능 최적화를 통해 안정적이고<br>지속 가능한 환경을 제공합니다.</p>
+      </div>
+
+      <!-- 화살표 -->
+      <div class="promise-arrow">
+        <svg viewBox="0 0 48 24" fill="none" width="48" height="24">
+          <path d="M2 12h40M34 4l8 8-8 8" stroke="#A0B4D0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="promise-step">
+        <div class="promise-img">
+          <svg viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="pc1" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#D8E8FF"/>
+                <stop offset="100%" stop-color="#9DC4F8"/>
+              </linearGradient>
+              <linearGradient id="pc2" x1="0" y1="0" x2="140" y2="140" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stop-color="#B0CCFF"/>
+                <stop offset="100%" stop-color="#6898E0"/>
+              </linearGradient>
+            </defs>
+            <!-- pn 글자 실루엣 -->
+            <rect x="14" y="40" width="26" height="70" rx="7" fill="url(#pc1)" opacity=".9"/>
+            <ellipse cx="40" cy="63" rx="18" ry="18" fill="url(#pc2)" opacity=".85"/>
+            <rect x="58" y="40" width="26" height="70" rx="7" fill="url(#pc1)" opacity=".9"/>
+            <rect x="84" y="40" width="22" height="70" rx="7" fill="url(#pc2)" opacity=".85"/>
+            <!-- 성장 화살표 -->
+            <path d="M98 25 L120 10 M110 8 L120 10 L118 20" stroke="#4B7EDB" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
         </div>
+        <h3>Future-Proof<br>Growth</h3>
+        <p>미래 변화에 유연하게 대응하며<br>고객의 성장을 함께합니다.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================
+     회사소개  ─  좌: 텍스트 / 우: 클라우드 이미지
+=================================================== -->
+<section class="sec-about" id="guide">
+  <div class="inner">
+    <div class="about-wrap">
+
+      <!-- 왼쪽 텍스트 -->
+      <div class="about-left">
+        <p class="about-label">회사소개</p>
+        <h2>데이터베이스 운영·컨설팅<br>전문 기업, 플랜엔</h2>
+        <p>다양한 운영 환경과 프로젝트 경험을 기반으로<br>유지보수, 구축, 마이그레이션, 성능 튜닝 및<br>장애 대응 서비스를 제공합니다.</p>
+        <a href="mailto:plann@iplann.co.kr" class="btn-about-more">
+          더 알아보기
+          <svg viewBox="0 0 16 16" fill="none" width="14" height="14">
+            <path d="M6 4l4 4-4 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- 오른쪽 이미지 -->
+      <div class="about-right">
+        <img src="about-cloud.jpg" alt="클라우드 DB 인프라 일러스트" />
       </div>
 
     </div>
@@ -301,186 +435,60 @@
 </section>
 
 <!-- ===================================================
-     전문 가이드 (2컬럼)
+     플렌엔의 경쟁력  ─  4 아이콘 카드
 =================================================== -->
-<section class="sec-white" id="guide">
+<section class="sec-why" id="strengths">
   <div class="inner">
-    <div class="guide-wrap">
-
-      <!-- 왼쪽 -->
-      <div class="guide-left">
-        <img src="logo1.png" alt="plan.n" class="guide-brand" />
-        <h2>데이터베이스 운영·관리<br>전문 가이드</h2>
-        <p>플렌엔 전문가들이 직접 작성한 DB 운영 노하우와 최신 트렌드 인사이트를 확인하세요.</p>
-        <a href="mailto:plann@iplann.co.kr" class="btn-more">더 알아보기 →</a>
-      </div>
-
-      <!-- 오른쪽 -->
-      <div class="guide-right">
-
-        <div class="guide-card">
-          <div class="guide-thumb" style="background:#1B56DB">
-            <svg viewBox="0 0 30 30" fill="none">
-              <ellipse cx="15" cy="9" rx="8" ry="3.2" stroke="white" stroke-width="1.5"/>
-              <path d="M7 9v5c0 1.77 3.58 3.2 8 3.2s8-1.43 8-3.2V9" stroke="white" stroke-width="1.5"/>
-              <path d="M7 14v5c0 1.77 3.58 3.2 8 3.2s8-1.43 8-3.2v-5" stroke="white" stroke-width="1.5"/>
-            </svg>
-          </div>
-          <div class="guide-info">
-            <span class="guide-tag">DB 운영</span>
-            <h4>효율적인 데이터베이스 운영을 위한 핵심 전략</h4>
-            <p>안정적인 DB 운영을 위한 모니터링·백업·최적화 전략을 소개합니다.</p>
-          </div>
-        </div>
-
-        <div class="guide-card">
-          <div class="guide-thumb" style="background:#0EA5C9">
-            <svg viewBox="0 0 30 30" fill="none">
-              <path d="M7 18c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M4.5 20c0 1.4 1.05 2 1.96 2h17.08c.91 0 1.96-.6 1.96-2" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-              <path d="M15 10V7M11 11.5L9 9M19 11.5L21 9" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="guide-info">
-            <span class="guide-tag">클라우드</span>
-            <h4>클라우드 DB 마이그레이션 완벽 가이드</h4>
-            <p>온프레미스에서 클라우드로의 안전한 DB 마이그레이션 방법을 알아봅니다.</p>
-          </div>
-        </div>
-
-        <div class="guide-card">
-          <div class="guide-thumb" style="background:#6366F1">
-            <svg viewBox="0 0 30 30" fill="none">
-              <path d="M15 4l2.7 8.2H26l-7 5.1 2.7 8.2L15 20.4l-6.7 5.1 2.7-8.2L4 12.2h8.3z" stroke="white" stroke-width="1.5" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="guide-info">
-            <span class="guide-tag">성능 최적화</span>
-            <h4>쿼리 성능 최적화로 DB 속도 향상하기</h4>
-            <p>인덱스 설계부터 쿼리 튜닝까지 전문가가 알려주는 성능 개선 핵심 포인트.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===================================================
-     플렌엔의 경쟁력
-=================================================== -->
-<section class="sec-gray" id="strengths">
-  <div class="inner">
-    <div class="str-top">
-      <img src="logo1.png" alt="plan.n" class="str-brand" />
-    </div>
     <div class="sec-head center">
+      <p class="sec-eyebrow">WHY PLAN.N</p>
       <h2>플렌엔의 경쟁력</h2>
-      <p>수많은 기업이 플렌엔을 선택하는 이유,<br>우리만의 차별화된 경쟁력을 확인하세요.</p>
     </div>
 
-    <div class="str-grid">
+    <div class="why-grid">
 
-      <div class="str-card">
-        <div class="str-icon-3d">
-          <!-- 데이터 보호 아이콘 -->
-          <svg viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="36" fill="url(#g1)"/>
-            <circle cx="40" cy="40" r="36" fill="url(#g1o)" opacity=".6"/>
-            <path d="M40 20c-8.837 0-16 7.163-16 16v4h-3v20h38V40h-3v-4c0-8.837-7.163-16-16-16z" fill="none" stroke="white" stroke-width="1.8" stroke-linejoin="round" opacity=".3"/>
-            <path d="M40 22c-7.732 0-14 6.268-14 14v4h28v-4c0-7.732-6.268-14-14-14z" fill="white" opacity=".15"/>
-            <rect x="26" y="40" width="28" height="18" rx="3" fill="white" opacity=".9"/>
-            <circle cx="40" cy="49" r="3" fill="#1B56DB"/>
-            <path d="M40 52v3" stroke="#1B56DB" stroke-width="1.5" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="g1" x1="10" y1="10" x2="70" y2="70" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#3B82F6"/>
-                <stop offset="1" stop-color="#1244CC"/>
-              </linearGradient>
-              <linearGradient id="g1o" x1="40" y1="4" x2="40" y2="76" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" stop-opacity=".25"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 52 52" fill="none" stroke="#7BAEE8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="26" cy="18" r="9"/>
+            <path d="M10 46c0-8.837 7.163-16 16-16s16 7.163 16 16"/>
           </svg>
         </div>
-        <h3>고객 Data 보호</h3>
-        <p>최고 수준의 보안 시스템과 철저한 데이터 관리 정책으로 고객 정보를 안전하게 보호합니다.</p>
+        <h3>전문 DBA 기술력</h3>
+        <p>DB 운영·구축·튜닝 종심의<br>전문 기술 서비스를 제공합니다.</p>
       </div>
 
-      <div class="str-card">
-        <div class="str-icon-3d">
-          <!-- 전문가팀 아이콘 -->
-          <svg viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="36" fill="url(#g2)"/>
-            <circle cx="40" cy="40" r="36" fill="url(#g2o)" opacity=".6"/>
-            <circle cx="30" cy="34" r="6" fill="white" opacity=".85"/>
-            <circle cx="50" cy="34" r="6" fill="white" opacity=".85"/>
-            <path d="M18 56c0-6.627 5.373-12 12-12" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity=".7"/>
-            <path d="M50 44c6.627 0 12 5.373 12 12" stroke="white" stroke-width="1.8" stroke-linecap="round" opacity=".7"/>
-            <circle cx="40" cy="32" r="7" fill="white"/>
-            <path d="M27 56c0-7.18 5.82-13 13-13s13 5.82 13 13" stroke="white" stroke-width="2" stroke-linecap="round"/>
-            <defs>
-              <linearGradient id="g2" x1="10" y1="10" x2="70" y2="70" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#3B82F6"/>
-                <stop offset="1" stop-color="#1244CC"/>
-              </linearGradient>
-              <linearGradient id="g2o" x1="40" y1="4" x2="40" y2="76" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" stop-opacity=".25"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 52 52" fill="none" stroke="#7BAEE8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M26 6l5 15h16L34 31l5 15-13-9-13 9 5-15L5 21h16z"/>
           </svg>
         </div>
-        <h3>핵심 전문가팀 보유</h3>
-        <p>각 분야 최고의 전문가들로 구성된 팀이 고객의 다양한 요구사항에 신속하게 대응합니다.</p>
+        <h3>빠른 장애 대응</h3>
+        <p>운영 경험 기반의 신속한 원인 분석<br>및 복구 지원이 가능합니다.</p>
       </div>
 
-      <div class="str-card">
-        <div class="str-icon-3d">
-          <!-- 클라우드 아이콘 -->
-          <svg viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="36" fill="url(#g3)"/>
-            <circle cx="40" cy="40" r="36" fill="url(#g3o)" opacity=".6"/>
-            <path d="M28 50c-5.523 0-10-4.477-10-10a10 10 0 019.8-10C28.925 24.4 33.58 21 39 21c7.18 0 13 5.82 13 13a9 9 0 01-9 9H28z" fill="white" opacity=".9"/>
-            <path d="M34 50v8M40 50v10M46 50v7" stroke="white" stroke-width="2" stroke-linecap="round" opacity=".6"/>
-            <defs>
-              <linearGradient id="g3" x1="10" y1="10" x2="70" y2="70" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#38BDF8"/>
-                <stop offset="1" stop-color="#0EA5E9"/>
-              </linearGradient>
-              <linearGradient id="g3o" x1="40" y1="4" x2="40" y2="76" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" stop-opacity=".25"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 52 52" fill="none" stroke="#7BAEE8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M26 4L42 11v15c0 12-16 22-16 22S10 38 10 26V11z"/>
+            <path d="M18 26l6 6 10-12"/>
           </svg>
         </div>
-        <h3>신뢰성 높은 클라우드</h3>
-        <p>검증된 클라우드 인프라와 높은 가용성으로 24/7 중단 없는 서비스 환경을 보장합니다.</p>
+        <h3>운영 안정성 확보</h3>
+        <p>예방 점검 및 모니터링으로<br>안정적인 운영 환경을 제공합니다.</p>
       </div>
 
-      <div class="str-card">
-        <div class="str-icon-3d">
-          <!-- 서비스 아이콘 -->
-          <svg viewBox="0 0 80 80" fill="none">
-            <circle cx="40" cy="40" r="36" fill="url(#g4)"/>
-            <circle cx="40" cy="40" r="36" fill="url(#g4o)" opacity=".6"/>
-            <path d="M40 18l4 12.5h13L46 38.8l4 12.5L40 43.5l-10 7.8 4-12.5-11-8.3h13z" fill="white" opacity=".9"/>
-            <defs>
-              <linearGradient id="g4" x1="10" y1="10" x2="70" y2="70" gradientUnits="userSpaceOnUse">
-                <stop stop-color="#A78BFA"/>
-                <stop offset="1" stop-color="#6366F1"/>
-              </linearGradient>
-              <linearGradient id="g4o" x1="40" y1="4" x2="40" y2="76" gradientUnits="userSpaceOnUse">
-                <stop stop-color="white" stop-opacity=".25"/>
-                <stop offset="1" stop-color="white" stop-opacity="0"/>
-              </linearGradient>
-            </defs>
+      <div class="why-card">
+        <div class="why-icon">
+          <svg viewBox="0 0 52 52" fill="none" stroke="#7BAEE8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="18" cy="18" r="7"/>
+            <path d="M6 44c0-6.627 5.373-12 12-12"/>
+            <circle cx="36" cy="18" r="7"/>
+            <path d="M34 32c6.627 0 12 5.373 12 12"/>
           </svg>
         </div>
-        <h3>탁월한 서비스</h3>
-        <p>24/7 전담 지원 체계와 신속한 이슈 대응으로 고객이 비즈니스에만 집중할 수 있게 돕습니다.</p>
+        <h3>맞춤형 서비스</h3>
+        <p>고객 환경에 최적화된 운영 및<br>기술 지원을 제공합니다.</p>
       </div>
 
     </div>
@@ -492,8 +500,11 @@
 =================================================== -->
 <section class="sec-cta" id="contact">
   <div class="inner cta-wrap">
-    <p class="cta-text">데이터베이스 운영 고민, 플렌엔이 해결해 드립니다.</p>
-    <a href="mailto:plann@iplann.co.kr" class="btn-cta">이메일 문의</a>
+    <div class="cta-left">
+      <p class="cta-text">데이터베이스 운영 고민, 플랜엔이 해결해드립니다.</p>
+      <p class="cta-sub">전문 DBA 엔지니어가 안정적인 시스템 운영을 지원합니다.</p>
+    </div>
+    <a href="mailto:plann@iplann.co.kr" class="btn-cta">상담 문의하기 →</a>
   </div>
 </section>
 
@@ -505,68 +516,68 @@
 
     <!-- 브랜드 -->
     <div class="footer-brand">
-      <img src="logo1.png" alt="plan.n" class="footer-logo" />
-      <p class="footer-desc">플렌엔은 고객의 성공을 최우선으로<br>생각하는 전문 기업입니다.</p>
-      <p class="footer-mail">plann@iplann.co.kr</p>
-      <div class="footer-sns">
-        <a href="#" aria-label="유튜브">
-          <svg viewBox="0 0 20 20" fill="currentColor">
-            <path d="M19.582 5.18a2.51 2.51 0 00-1.765-1.778C16.254 3 10 3 10 3S3.746 3 2.183 3.402A2.51 2.51 0 00.418 5.18C0 6.756 0 10.05 0 10.05s0 3.293.418 4.87a2.51 2.51 0 001.765 1.778C3.746 17.1 10 17.1 10 17.1s6.254 0 7.817-.402a2.51 2.51 0 001.765-1.778C20 13.343 20 10.05 20 10.05s0-3.294-.418-4.87zM8 12.95v-5.8l5.2 2.9L8 12.95z"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="인스타그램">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="2" width="16" height="16" rx="4"/>
-            <circle cx="10" cy="10" r="3.5"/>
-            <circle cx="14.5" cy="5.5" r="1" fill="currentColor" stroke="none"/>
-          </svg>
-        </a>
-        <a href="#" aria-label="블로그">
-          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5">
-            <rect x="2" y="3" width="16" height="14" rx="3"/>
-            <path d="M6 7h8M6 10h6M6 13h4" stroke-linecap="round"/>
-          </svg>
-        </a>
+      <div class="footer-logo-row">
+        <img src="logo1.png" alt="plan.n" class="footer-logo" />
+        <span class="footer-brand-name">plan.n</span>
       </div>
+      <p class="footer-tagline">Database Operation &amp; Consulting Service</p>
+      <p class="footer-desc">안정적인 운영과 전문 기술력을 기반으로<br>고객의 핵심 시스템을 지원합니다.</p>
     </div>
 
-    <!-- 네비게이션 -->
-    <div class="footer-navs">
-      <div class="footer-col">
-        <h4>주요 서비스</h4>
-        <ul>
-          <li><a href="#services">DB 관리 및 모니터링</a></li>
-          <li><a href="#services">주기적 DB 마이그레이션</a></li>
-          <li><a href="#services">이슈 해결</a></li>
-          <li><a href="#services">전문 지원</a></li>
-          <li><a href="#services">클라우드 최적화</a></li>
-          <li><a href="#services">성능 최적화</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>회사 소개</h4>
-        <ul>
-          <li><a href="#about">미션 &amp; 비전</a></li>
-          <li><a href="#promise">플렌엔의 약속</a></li>
-          <li><a href="#strengths">경쟁력</a></li>
-          <li><a href="#">채용</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>파트너스</h4>
-        <ul>
-          <li><a href="#">파트너 소개</a></li>
-          <li><a href="#">파트너 신청</a></li>
-          <li><a href="#">협력 문의</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>이용약관</h4>
-        <ul>
-          <li><a href="#">서비스 이용약관</a></li>
-          <li><a href="#">개인정보처리방침</a></li>
-          <li><a href="#">쿠키 정책</a></li>
-        </ul>
+    <!-- 서비스 -->
+    <div class="footer-col">
+      <h4>서비스</h4>
+      <ul>
+        <li><a href="#services">DB 운영 및 유지보수</a></li>
+        <li><a href="#services">구축 및 마이그레이션</a></li>
+        <li><a href="#services">성능 튜닝</a></li>
+        <li><a href="#services">장애 대응</a></li>
+      </ul>
+    </div>
+
+    <!-- 회사 -->
+    <div class="footer-col">
+      <h4>회사</h4>
+      <ul>
+        <li><a href="#guide">회사소개</a></li>
+        <li><a href="#promise">기술 역량</a></li>
+        <li><a href="#guide">운영 프로세스</a></li>
+        <li><a href="#contact">문의하기</a></li>
+      </ul>
+    </div>
+
+    <!-- 연락처 -->
+    <div class="footer-col footer-contact">
+      <h4>연락처</h4>
+      <ul>
+        <li>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" width="14" height="14"><path d="M2 3a1 1 0 011-1h2.5l1 3-1.5 1a11 11 0 005 5l1-1.5 3 1V13a1 1 0 01-1 1A12 12 0 012 3z"/></svg>
+          010-1234-5678
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" width="14" height="14"><rect x="1" y="3" width="14" height="10" rx="2"/><path d="M1 5l7 5 7-5"/></svg>
+          contact@plann.co.kr
+        </li>
+        <li>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" width="14" height="14"><path d="M8 1.5C5.5 1.5 3.5 3.5 3.5 6c0 3.5 4.5 8.5 4.5 8.5s4.5-5 4.5-8.5c0-2.5-2-4.5-4.5-4.5z"/><circle cx="8" cy="6" r="1.5"/></svg>
+          서울특별시 강남구 테헤란로 00길 00<br>플렌엔 빌딩 5F
+        </li>
+      </ul>
+    </div>
+
+    <!-- Follow Us -->
+    <div class="footer-col footer-follow">
+      <h4>Follow Us</h4>
+      <div class="footer-sns">
+        <a href="#" aria-label="LinkedIn">
+          <svg viewBox="0 0 20 20" fill="currentColor"><path d="M4.477 3C3.66 3 3 3.66 3 4.477v11.046C3 16.34 3.66 17 4.477 17h11.046C16.34 17 17 16.34 17 15.523V4.477C17 3.66 16.34 3 15.523 3H4.477zm1.3 3.5a1.3 1.3 0 110 2.6 1.3 1.3 0 010-2.6zm-.95 3.5h1.9v5.5h-1.9V10zm3.2 0h1.85v.75c.26-.46.87-.9 1.8-.9 1.93 0 2.29 1.27 2.29 2.92V15.5h-1.9v-2.34c0-.7-.01-1.6-1-1.6-.99 0-1.14.77-1.14 1.56V15.5h-1.9V10z"/></svg>
+        </a>
+        <a href="#" aria-label="블로그">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="16" height="14" rx="3"/><path d="M6 7h8M6 10h6M6 13h4" stroke-linecap="round"/></svg>
+        </a>
+        <a href="#" aria-label="이메일">
+          <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="16" height="12" rx="2"/><path d="M2 6l8 6 8-6"/></svg>
+        </a>
       </div>
     </div>
 
@@ -574,7 +585,7 @@
 
   <div class="footer-copy">
     <div class="inner">
-      <p>© 2026 plan.n Co., Ltd. All rights reserved.</p>
+      <p>© 2024 plan.n. All rights reserved.</p>
     </div>
   </div>
 </footer>
