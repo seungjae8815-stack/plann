@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git config *)",
+      "Bash(git commit -m 'Initial commit: plan.n 홈페이지 *)",
+      "Bash(git remote *)",
+      "Bash(git branch *)",
+      "Bash(git push *)",
+      "Bash(git commit -m 'Redesign: 참고 사이트 100% 재현 - 히어로 이미지 적용, 섹션 구조 완전 재구성 *)",
+      "Bash(git commit -m 'Full rebuild: 참고 사이트 레이아웃 100% 재현 *)"
+    ]
+  }
+}

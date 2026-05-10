@@ -1,62 +1,59 @@
-// Header scroll shadow
+/* ── 헤더 스크롤 효과 ── */
 const header = document.getElementById('header');
-window.addEventListener('scroll', () => {
-  header.classList.toggle('scrolled', window.scrollY > 10);
-});
+const onScroll = () => header.classList.toggle('on', window.scrollY > 8);
+window.addEventListener('scroll', onScroll, { passive: true });
 
-// Mobile hamburger
-const hamBtn = document.getElementById('hamBtn');
-const mobileMenu = document.getElementById('mobileMenu');
+/* ── 모바일 메뉴 ── */
+const hamBtn   = document.getElementById('hamBtn');
+const mobileNav = document.getElementById('mobileNav');
 hamBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
+  const open = mobileNav.classList.toggle('open');
+  hamBtn.setAttribute('aria-expanded', open);
 });
-mobileMenu.querySelectorAll('a').forEach(a => {
-  a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+mobileNav.querySelectorAll('a').forEach(a => {
+  a.addEventListener('click', () => mobileNav.classList.remove('open'));
 });
 
-// Smooth scroll offset for fixed header
+/* ── 앵커 스무스 스크롤 (헤더 높이 보정) ── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', e => {
-    const id = a.getAttribute('href');
-    if (id === '#') return;
-    const target = document.querySelector(id);
+    const href = a.getAttribute('href');
+    if (href === '#') return;
+    const target = document.querySelector(href);
     if (!target) return;
     e.preventDefault();
-    window.scrollTo({ top: target.getBoundingClientRect().top + window.scrollY - 80, behavior: 'smooth' });
+    const top = target.getBoundingClientRect().top + window.scrollY - 72;
+    window.scrollTo({ top, behavior: 'smooth' });
   });
 });
 
-// Scroll reveal
-const revealEls = document.querySelectorAll(
-  '.svc-card, .promise-card, .str-card, .guide-card, .sec-hd, .guide-left, .strengths-top'
+/* ── 스크롤 페이드 인 ── */
+const fadeTargets = document.querySelectorAll(
+  '.svc-card, .promise-card, .str-card, .guide-card, .sec-head, .guide-left, .str-top'
 );
-revealEls.forEach(el => el.classList.add('reveal'));
+fadeTargets.forEach(el => el.classList.add('fade'));
 
-const observer = new IntersectionObserver((entries) => {
+const io = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+      entry.target.classList.add('in');
+      io.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1 });
 
-revealEls.forEach(el => observer.observe(el));
+fadeTargets.forEach(el => io.observe(el));
 
-// Stagger cards within each grid
-['.svc-grid', '.promise-grid', '.strengths-grid'].forEach(sel => {
+/* ── 카드 그룹 순차 등장 ── */
+['.svc-grid', '.promise-grid', '.str-grid'].forEach(sel => {
   const grid = document.querySelector(sel);
   if (!grid) return;
-  const cards = grid.querySelectorAll('.reveal');
-  const gridObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        cards.forEach((card, i) => {
-          setTimeout(() => card.classList.add('visible'), i * 90);
-        });
-        gridObserver.disconnect();
-      }
-    });
+  const cards = Array.from(grid.querySelectorAll('.fade'));
+  const gio = new IntersectionObserver(entries => {
+    if (entries[0].isIntersecting) {
+      cards.forEach((card, i) => setTimeout(() => card.classList.add('in'), i * 80));
+      gio.disconnect();
+    }
   }, { threshold: 0.05 });
-  if (cards.length) gridObserver.observe(grid);
+  if (cards.length) gio.observe(grid);
 });
