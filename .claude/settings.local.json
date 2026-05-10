@@ -10,7 +10,8 @@
       "Bash(git branch *)",
       "Bash(git push *)",
       "Bash(git commit -m 'Redesign: 참고 사이트 100% 재현 - 히어로 이미지 적용, 섹션 구조 완전 재구성 *)",
-      "Bash(git commit -m 'Full rebuild: 참고 사이트 레이아웃 100% 재현 *)"
+      "Bash(git commit -m 'Full rebuild: 참고 사이트 레이아웃 100% 재현 *)",
+      "Bash(git commit -m 'Header & Hero 100% 재현: 네비 박스 + 홈 밑줄 + 히어로 전체배경 + 4개 아이콘 타일 *)"
     ]
   }
 }

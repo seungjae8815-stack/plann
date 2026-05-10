@@ -16,27 +16,38 @@
 =================================================== -->
 <header class="header" id="header">
   <div class="header-wrap">
+
+    <!-- 로고 -->
     <a href="#" class="header-logo">
       <img src="logo1.png" alt="plan.n" />
     </a>
-    <nav class="gnb">
-      <ul>
-        <li><a href="#" class="active">홈</a></li>
-        <li><a href="#about">회사소개</a></li>
-        <li><a href="#services">주요 서비스</a></li>
-        <li><a href="#guide">성공 사례</a></li>
-        <li><a href="#strengths">파트너스</a></li>
-        <li><a href="#">이용약관</a></li>
-        <li><a href="#">채용</a></li>
+
+    <!-- 네비게이션 박스 -->
+    <div class="gnb-box">
+      <ul class="gnb-list">
+        <li class="gnb-item is-active"><a href="#">홈</a></li>
+        <li class="gnb-item"><a href="#about">회사소개</a></li>
+        <li class="gnb-item"><a href="#services">주요 서비스</a></li>
+        <li class="gnb-item"><a href="#guide">성공 사례</a></li>
+        <li class="gnb-item"><a href="#strengths">파트너스</a></li>
+        <li class="gnb-item"><a href="#">이용약관</a></li>
+        <li class="gnb-item"><a href="#">채용</a></li>
       </ul>
-    </nav>
+    </div>
+
+    <!-- 우측 버튼 -->
     <div class="header-right">
       <a href="mailto:plann@iplann.co.kr" class="btn-contact">이메일 문의</a>
     </div>
-    <button class="ham-btn" id="hamBtn">
+
+    <!-- 모바일 햄버거 -->
+    <button class="ham-btn" id="hamBtn" aria-label="메뉴열기">
       <span></span><span></span><span></span>
     </button>
+
   </div>
+
+  <!-- 모바일 드로어 -->
   <nav class="mobile-nav" id="mobileNav">
     <ul>
       <li><a href="#">홈</a></li>
@@ -52,32 +63,70 @@
 </header>
 
 <!-- ===================================================
-     HERO
+     HERO  ─  hero-visual.png 전체 배경 / 텍스트 오버레이
 =================================================== -->
-<section class="hero">
-  <div class="hero-grid">
-    <!-- 왼쪽 텍스트 영역 -->
-    <div class="hero-text">
+<section class="hero" id="home">
+  <div class="hero-inner">
+
+    <!-- 왼쪽 텍스트 블록 -->
+    <div class="hero-content">
       <p class="hero-eyebrow">DB의 구축 · 이전 · 운영과 DBA 대행</p>
-      <h1>안정적인<br>데이터베이스 운영의 시작</h1>
-      <p class="hero-sub">플렌엔의 전문 솔루션으로 기업이 필요로 하는<br>데이터베이스 운영 해결책을 제공해 드립니다.</p>
-      <div class="hero-tags">
-        <span>데이터베이스 관리</span>
-        <span>클라우드 마이그레이션</span>
-        <span>성능 최적화</span>
-        <span>이슈 해결</span>
-        <span>24/7 전문 지원</span>
-      </div>
+      <h1 class="hero-title">안정적인<br>데이터베이스 운영의 시작</h1>
+      <p class="hero-desc">기업이 찾고 필요로하는 것에 대한 해결책을<br>제공해 드립니다.</p>
+
+      <!-- CTA 버튼 2개 -->
       <div class="hero-cta">
-        <a href="mailto:plann@iplann.co.kr" class="btn-primary">무료 상담 신청</a>
-        <a href="#services" class="btn-text-arrow">더 알아보기 →</a>
+        <a href="#services" class="btn-hero-primary">서비스 소개</a>
+        <a href="mailto:plann@iplann.co.kr" class="btn-hero-outline">서비스 문의하기</a>
       </div>
-    </div>
-    <!-- 오른쪽 이미지 영역 -->
-    <div class="hero-img-wrap">
-      <img src="hero-visual.png" alt="plan.n 비주얼" class="hero-img" />
-    </div>
-  </div>
+
+      <!-- 하단 4개 아이콘 타일 -->
+      <div class="hero-tiles">
+
+        <div class="hero-tile">
+          <div class="htile-icon" style="background:#E8F0FE">
+            <svg viewBox="0 0 24 24" fill="none">
+              <ellipse cx="12" cy="7" rx="8" ry="3" stroke="#1B56DB" stroke-width="1.6"/>
+              <path d="M4 7v5c0 1.657 3.582 3 8 3s8-1.343 8-3V7" stroke="#1B56DB" stroke-width="1.6"/>
+              <path d="M4 12v5c0 1.657 3.582 3 8 3s8-1.343 8-3v-5" stroke="#1B56DB" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <span>DB 관리</span>
+        </div>
+
+        <div class="hero-tile">
+          <div class="htile-icon" style="background:#E0F2FE">
+            <svg viewBox="0 0 24 24" fill="none">
+              <path d="M5 12h14M14 7l5 5-5 5" stroke="#0EA5C9" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <span>마이그레이션</span>
+        </div>
+
+        <div class="hero-tile">
+          <div class="htile-icon" style="background:#EDE9FE">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="8" stroke="#7C3AED" stroke-width="1.6"/>
+              <path d="M12 8v4l3 3" stroke="#7C3AED" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span>이슈 해결</span>
+        </div>
+
+        <div class="hero-tile">
+          <div class="htile-icon" style="background:#E0FDF4">
+            <svg viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="8" r="4" stroke="#059669" stroke-width="1.6"/>
+              <path d="M4 20c0-4.418 3.582-8 8-8s8 3.582 8 8" stroke="#059669" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <span>전문 지원</span>
+        </div>
+
+      </div><!-- /hero-tiles -->
+    </div><!-- /hero-content -->
+
+  </div><!-- /hero-inner -->
 </section>
 
 <!-- ===================================================
