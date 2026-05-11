@@ -209,30 +209,16 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(135deg, #F2F5FB 0%, #E1E9F5 55%, #CBD8EC 100%);
+  background-color: #F2F5FB;
+  background-image: url('hero-back.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   display: flex;
   align-items: center;
+  justify-content: center;
   padding-top: 80px;
   overflow: hidden;
-}
-
-/* 배경 블러 블롭 */
-.hero-bg-blob {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(70px);
-  pointer-events: none;
-  z-index: 0;
-}
-.hero-bg-blob.blob-a {
-  width: 480px; height: 480px;
-  background: rgba(147, 197, 253, 0.45);
-  top: -120px; right: -80px;
-}
-.hero-bg-blob.blob-b {
-  width: 360px; height: 360px;
-  background: rgba(191, 219, 254, 0.55);
-  bottom: -120px; left: 30%;
 }
 
 .hero-inner {
@@ -240,132 +226,42 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
   padding: 70px var(--side) 90px;
   width: 100%;
-  display: grid;
-  grid-template-columns: minmax(0, 600px) 1fr;
-  gap: 60px;
-  align-items: center;
+  display: flex;
+  justify-content: center;
   position: relative;
   z-index: 1;
 }
 
-/* 좌측 파란 카드 */
+/* 텍스트 블록 — 히어로 배경 위에 가운데 정렬 */
 .hero-text {
   position: relative;
   z-index: 1;
-  background: linear-gradient(160deg, #1252CC 0%, #0C3A9A 100%);
-  border-radius: 20px;
-  padding: 52px 56px 44px;
-  color: #fff;
-  box-shadow: 0 24px 60px rgba(11, 30, 79, 0.28);
-}
-
-/* 우측 비주얼 — plan.n 브랜드 이미지 (반응형) */
-.hero-visual {
-  position: relative;
-  z-index: 1;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.hero-visual-img {
-  width: 100%;
-  max-width: clamp(280px, 42vw, 560px);
-  height: auto;
-  aspect-ratio: 950 / 1024;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-  filter: drop-shadow(0 18px 40px rgba(70, 110, 180, 0.18));
+  max-width: 780px;
+  text-align: center;
+  color: #0F172A;
 }
 
 .hero-title {
-  font-size: clamp(30px, 3vw, 42px);
+  font-size: clamp(30px, 3.4vw, 48px);
   font-weight: 800;
-  color: #fff;
-  line-height: 1.28;
+  color: #0F172A;
+  line-height: 1.32;
   letter-spacing: -0.02em;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 .hero-title em {
   font-style: normal;
-  background: linear-gradient(90deg, #BFDBFE, #60A5FA);
+  background: linear-gradient(90deg, #3B82F6 0%, #1252CC 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .hero-desc {
-  font-size: 15.5px;
-  color: rgba(255, 255, 255, 0.85);
-  line-height: 1.8;
-  margin-bottom: 32px;
+  font-size: clamp(15px, 1.1vw, 17px);
+  color: #374151;
+  line-height: 1.85;
   font-weight: 400;
-}
-
-/* 버튼 그룹 */
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
-}
-.btn-hero-primary {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: #fff;
-  color: var(--c-blue);
-  font-size: 14.5px;
-  font-weight: 700;
-  padding: 13px 28px;
-  border-radius: 50px;
-  border: none;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-  transition: transform .18s, box-shadow .2s;
-}
-.btn-hero-primary:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 22px rgba(0, 0, 0, 0.22);
-}
-.btn-hero-link {
-  display: inline-flex;
-  align-items: center;
-  font-size: 14.5px;
-  font-weight: 600;
-  color: #fff;
-  transition: opacity .18s;
-}
-.btn-hero-link:hover { opacity: 0.78; }
-
-/* 하단 통계 */
-.hero-stats {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
-}
-.hero-stat { text-align: left; }
-.hero-stat strong {
-  display: block;
-  font-family: 'Century Gothic', 'Inter', sans-serif;
-  font-size: 28px;
-  font-weight: 800;
-  color: #fff;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-}
-.hero-stat span {
-  font-size: 12.5px;
-  color: rgba(255, 255, 255, 0.7);
-  font-weight: 400;
-}
-.hero-stat-divider {
-  width: 1px;
-  height: 36px;
-  background: rgba(255, 255, 255, 0.2);
 }
 
 /* ==========================================
@@ -1086,19 +982,13 @@ img { max-width: 100%; display: block; }
   .str-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-navs { grid-template-columns: repeat(2, 1fr); }
   .gnb-item a { font-size: 12.5px; }
-  .hero-inner { gap: 40px; grid-template-columns: minmax(0, 540px) 1fr; }
-  .hero-text { padding: 44px 44px 36px; }
-  .hero-title { font-size: 32px; }
-  .hero-visual-img { max-width: clamp(260px, 40vw, 480px); }
+  .hero-title { font-size: 36px; }
   .about-grid { gap: 20px; }
 }
 
 @media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 40px; padding: 56px var(--side) 80px; }
-  .hero-visual { order: -1; max-width: 520px; margin: 0 auto; width: 100%; }
-  .hero-visual-img { max-width: min(80vw, 440px); }
-  .hero-text { padding: 40px 36px 32px; }
-  .hero-title { font-size: 28px; }
+  .hero-inner { padding: 56px var(--side) 80px; }
+  .hero-title { font-size: 30px; }
   .guide-wrap { grid-template-columns: 1fr; gap: 40px; }
   .promise-flow { flex-direction: column; gap: 28px; }
   .promise-arrow { padding-bottom: 0; transform: rotate(90deg); }
@@ -1106,7 +996,6 @@ img { max-width: 100%; display: block; }
   .about-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-wrap { flex-wrap: wrap; gap: 32px; }
-  .hero-stats { gap: 20px; }
   .cta-wrap { flex-direction: column; text-align: center; gap: 32px; }
 }
 
@@ -1128,12 +1017,8 @@ img { max-width: 100%; display: block; }
   .sec-quote { padding: 40px 0; }
   .quote-card { flex-direction: column; align-items: flex-start; gap: 20px; padding: 28px 24px; }
   .quote-text { font-size: 15px; }
-  .hero-text { padding: 36px 28px 28px; }
   .hero-title { font-size: 26px; }
   .hero-desc { font-size: 14.5px; }
-  .hero-stats { gap: 16px; flex-wrap: wrap; }
-  .hero-stat strong { font-size: 24px; }
-  .hero-visual-img { max-width: min(85vw, 360px); }
   .promise-img { width: 150px; height: 150px; }
 }
 
@@ -1141,6 +1026,4 @@ img { max-width: 100%; display: block; }
   :root { --side: 18px; }
   .svc-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: 1fr; }
-  .hero-actions { flex-wrap: wrap; gap: 16px; }
-  .hero-stat-divider { display: none; }
 }
