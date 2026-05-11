@@ -37,6 +37,7 @@ body {
   background: var(--c-white);
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
+  word-break: keep-all;
 }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
@@ -450,6 +451,14 @@ img { max-width: 100%; display: block; }
   font-size: 14px;
   color: #6B7280;
   line-height: 1.8;
+}
+
+/* 줄바꿈 헬퍼 — PC 전용 / 모바일 전용 br */
+.br-pc { display: inline; }
+.br-mobile { display: none; }
+@media (max-width: 768px) {
+  .br-pc { display: none; }
+  .br-mobile { display: inline; }
 }
 
 /* ==========================================
