@@ -390,7 +390,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================
-   ABOUT  ─  플렌엔을 소개합니다 (3 카드)
+   ABOUT  ─  플랜엔을 소개합니다 (3 카드)
 ========================================== */
 .sec-about-intro {
   background: #F4F6FB;
@@ -569,7 +569,7 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================
-   플렌엔의 약속  ─  3단계 플로우
+   플랜엔의 약속  ─  3단계 플로우
 ========================================== */
 .sec-promise {
   background: #F0F4FA;
@@ -691,14 +691,17 @@ img { max-width: 100%; display: block; }
   transform: translateY(-1px);
 }
 
-.about-right img {
+.about-right img,
+.about-right video {
   width: 100%;
+  height: auto;
   border-radius: 16px;
   object-fit: cover;
+  display: block;
 }
 
 /* ==========================================
-   플렌엔의 경쟁력  ─  4 아이콘 카드
+   플랜엔의 경쟁력  ─  4 아이콘 카드
 ========================================== */
 .sec-why {
   background: #F8FAFC;
