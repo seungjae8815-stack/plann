@@ -485,33 +485,48 @@ img { max-width: 100%; display: block; }
 }
 
 .svc-card {
-  background: #fff;
+  position: relative;
+  background-color: #fff;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
   border: 1px solid #E4EAF4;
   border-radius: 16px;
-  padding: 28px 24px 24px;
+  padding: 130px 24px 24px;
   display: flex;
   flex-direction: column;
   box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   transition: box-shadow .2s, transform .2s;
+  overflow: hidden;
+}
+/* 가독성 오버레이 — 상단은 이미지 부각, 텍스트 영역은 가독성, 하단은 다시 옅어져 배경 노출 */
+.svc-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.10) 0%,
+    rgba(255, 255, 255, 0.25) 22%,
+    rgba(255, 255, 255, 0.92) 32%,
+    rgba(255, 255, 255, 0.88) 70%,
+    rgba(255, 255, 255, 0.55) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+.svc-card > * {
+  position: relative;
+  z-index: 1;
 }
 .svc-card:hover {
   box-shadow: 0 10px 36px rgba(27,86,219,0.10);
   transform: translateY(-4px);
 }
 
-/* 대형 일러스트 아이콘 */
-.svc-img-wrap {
-  width: 100%;
-  height: 110px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 20px;
-}
-.svc-img-wrap svg {
-  width: 110px;
-  height: 110px;
-}
+/* 카드별 배경 이미지 (의뢰인 지정 순서) */
+.svc-card:nth-child(1) { background-image: url('KakaoTalk_20260511_223044895_01.png'); } /* DB 운영 및 유지보수 */
+.svc-card:nth-child(2) { background-image: url('KakaoTalk_20260511_223044895_02.png'); } /* 구축 및 마이그레이션 */
+.svc-card:nth-child(3) { background-image: url('KakaoTalk_20260511_223044895_03.png'); } /* 성능 튜닝 */
+.svc-card:nth-child(4) { background-image: url('KakaoTalk_20260511_223044895.png'); }    /* 긴급 장애 대응 */
 
 /* 텍스트 영역 */
 .svc-body { flex: 1; display: flex; flex-direction: column; }
@@ -524,7 +539,7 @@ img { max-width: 100%; display: block; }
 }
 .svc-body > p {
   font-size: 13.5px;
-  color: #6B7280;
+  color: #374151;
   line-height: 1.75;
 }
 
