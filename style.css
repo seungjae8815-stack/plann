@@ -786,11 +786,11 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================
-   CTA 배너  ─  브랜드 블루 그라데이션 + 미묘한 블롭 장식
+   CTA 배너  ─  히어로와 동일한 옅은 파스텔 그라데이션
 ========================================== */
 .sec-cta {
   position: relative;
-  background: linear-gradient(135deg, #1252CC 0%, #0C3A9A 100%);
+  background: linear-gradient(135deg, #F2F5FB 0%, #E1E9F5 55%, #CBD8EC 100%);
   padding: 100px 0;
   overflow: hidden;
 }
@@ -802,14 +802,14 @@ img { max-width: 100%; display: block; }
 .cta-blob-1 {
   width: 480px; height: 480px;
   top: -160px; right: -120px;
-  background: rgba(96, 165, 250, 0.22);
-  filter: blur(50px);
+  background: rgba(147, 197, 253, 0.35);
+  filter: blur(60px);
 }
 .cta-blob-2 {
   width: 360px; height: 360px;
   bottom: -140px; left: -80px;
-  background: rgba(255, 255, 255, 0.08);
-  filter: blur(40px);
+  background: rgba(191, 219, 254, 0.40);
+  filter: blur(50px);
 }
 .cta-wrap {
   position: relative;
@@ -823,18 +823,18 @@ img { max-width: 100%; display: block; }
 .cta-text {
   font-size: clamp(22px, 2.4vw, 32px);
   font-weight: 700;
-  color: rgba(255, 255, 255, 0.88);
+  color: #475569;
   line-height: 1.42;
   margin-bottom: 12px;
   letter-spacing: -0.02em;
 }
 .cta-text strong {
-  color: #fff;
+  color: #0F172A;
   font-weight: 800;
 }
 .cta-sub {
   font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.7);
+  color: #6B7280;
 }
 .cta-actions {
   flex-shrink: 0;
@@ -844,33 +844,33 @@ img { max-width: 100%; display: block; }
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: #fff;
-  color: var(--c-blue);
+  background: linear-gradient(135deg, #1252CC 0%, #0C3A9A 100%);
+  color: #fff;
   font-size: 15px;
   font-weight: 700;
   padding: 14px 32px;
   border-radius: 50px;
   border: none;
-  box-shadow: 0 6px 24px rgba(11, 30, 79, 0.35);
+  box-shadow: 0 8px 24px rgba(18, 82, 204, 0.30);
   white-space: nowrap;
   transition: transform .18s, box-shadow .2s, background .18s, color .18s;
 }
 .btn-cta:hover {
-  background: #0A1538;
+  background: linear-gradient(135deg, #0C3A9A 0%, #0A1538 100%);
   color: #fff;
   transform: translateY(-1px);
-  box-shadow: 0 10px 32px rgba(10, 21, 56, 0.55);
+  box-shadow: 0 12px 32px rgba(18, 82, 204, 0.45);
 }
 .cta-email {
   margin-top: 12px;
   font-size: 13px;
-  color: rgba(255, 255, 255, 0.6);
+  color: #6B7280;
 }
 
 /* ==========================================
-   FOOTER
+   FOOTER  ─  히어로와 동일한 옅은 파스텔 그라데이션
 ========================================== */
-.footer { background: #0A1538; }
+.footer { background: linear-gradient(135deg, #F2F5FB 0%, #E1E9F5 55%, #CBD8EC 100%); }
 
 .footer-wrap {
   display: flex;
@@ -897,17 +897,17 @@ img { max-width: 100%; display: block; }
 .footer-brand-name {
   font-size: 16px;
   font-weight: 700;
-  color: #FFFFFF;
+  color: #0F172A;
 }
 .footer-tagline {
   font-size: 11px;
   font-weight: 500;
-  color: #7B8AB5;
+  color: #6B7280;
   margin-bottom: 12px;
 }
 .footer-desc {
   font-size: 12.5px;
-  color: #8B96B8;
+  color: #475569;
   line-height: 1.8;
 }
 
@@ -916,17 +916,17 @@ img { max-width: 100%; display: block; }
 .footer-col h4 {
   font-size: 12px;
   font-weight: 700;
-  color: #fff;
+  color: #0F172A;
   letter-spacing: .04em;
   margin-bottom: 14px;
 }
 .footer-col ul { display: flex; flex-direction: column; gap: 9px; }
 .footer-col a {
   font-size: 13px;
-  color: #8B96B8;
+  color: #6B7280;
   transition: color .18s;
 }
-.footer-col a:hover { color: #fff; }
+.footer-col a:hover { color: var(--c-blue); }
 
 /* 연락처 */
 .footer-contact ul { gap: 12px; }
@@ -935,10 +935,10 @@ img { max-width: 100%; display: block; }
   align-items: flex-start;
   gap: 8px;
   font-size: 13px;
-  color: #8B96B8;
+  color: #6B7280;
   line-height: 1.6;
 }
-.footer-contact li svg { flex-shrink: 0; margin-top: 2px; color: #5A6896; }
+.footer-contact li svg { flex-shrink: 0; margin-top: 2px; color: #94A3B8; }
 
 /* Follow Us */
 .footer-follow { min-width: 100px; }
@@ -949,17 +949,18 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(148, 163, 184, 0.25);
   border-radius: 50%;
-  color: #8B96B8;
-  transition: background .18s, color .18s;
+  color: #6B7280;
+  transition: background .18s, color .18s, transform .18s;
 }
-.footer-sns a:hover { background: #fff; color: #0A1538; }
+.footer-sns a:hover { background: var(--c-blue); color: #fff; transform: translateY(-1px); }
 .footer-sns svg { width: 16px; height: 16px; }
 
 /* 하단 법적정보 영역 */
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
   padding: 20px 0 24px;
 }
 .footer-bottom .inner {
@@ -975,16 +976,16 @@ img { max-width: 100%; display: block; }
 }
 .footer-legal a {
   font-size: 13px;
-  color: #A6B0D2;
+  color: #475569;
   font-weight: 500;
   text-decoration: none;
   transition: color .15s;
 }
-.footer-legal a:hover { color: #fff; }
+.footer-legal a:hover { color: var(--c-blue); }
 .footer-legal-bold { font-weight: 700 !important; }
 .footer-legal-div {
   font-size: 12px;
-  color: #3F4D7A;
+  color: #CBD5E1;
 }
 .footer-biz-info {
   display: flex;
@@ -993,12 +994,12 @@ img { max-width: 100%; display: block; }
   justify-content: center;
   gap: 6px 12px;
   font-size: 12px;
-  color: #7B8AB5;
+  color: #6B7280;
 }
-.footer-biz-sep { color: #3F4D7A; }
+.footer-biz-sep { color: #CBD5E1; }
 .footer-copy-txt {
   font-size: 12px;
-  color: #6878A8;
+  color: #94A3B8;
   margin-top: 2px;
 }
 
@@ -1082,8 +1083,15 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   :root { --side: 20px; }
   .gnb-list { display: none; }
-  .btn-email-inquiry { display: none; }
   .ham-btn { display: flex; }
+  /* 모바일에서도 이메일 문의 버튼 노출 — 햄버거 왼쪽에 컴팩트하게 */
+  .btn-email-inquiry {
+    height: 30px;
+    padding: 0 12px;
+    font-size: 11.5px;
+    margin-left: auto;
+    margin-right: 8px;
+  }
   .svc-grid { grid-template-columns: repeat(2, 1fr); }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
   .sec-services, .sec-promise, .sec-about, .sec-about-intro, .sec-why, .sec-cta { padding: 80px 0; }
