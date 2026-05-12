@@ -480,12 +480,38 @@ img { max-width: 100%; display: block; }
 }
 
 /* ==========================================
-   플랜엔의 약속  ─  3단계 플로우
+   플랜엔의 약속  ─  3단계 플로우 (다크 블루 데이터센터 배경)
 ========================================== */
 .sec-promise {
-  background: #F0F4FA;
+  position: relative;
+  background-color: #0A1E45;
+  background-image: url('plann_promise.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   padding: 130px 0;
+  overflow: hidden;
 }
+/* 다크 오버레이 — 배경 이미지 위 텍스트 가독성 확보 */
+.sec-promise::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg,
+    rgba(10, 30, 69, 0.55) 0%,
+    rgba(10, 30, 69, 0.78) 100%);
+  z-index: 0;
+  pointer-events: none;
+}
+.sec-promise > .inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* 다크 톤 위 텍스트 컬러 재정의 */
+.sec-promise .sec-eyebrow { color: #93C5FD; }
+.sec-promise .sec-head h2 { color: #fff; }
+.sec-promise .sec-head p { color: rgba(255, 255, 255, 0.82); }
 
 .promise-flow {
   display: flex;
@@ -511,7 +537,7 @@ img { max-width: 100%; display: block; }
   border-radius: 24px;
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 14px 30px rgba(70, 110, 180, 0.18);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -526,13 +552,13 @@ img { max-width: 100%; display: block; }
   font-family: 'Century Gothic', 'Inter', sans-serif;
   font-size: 17px;
   font-weight: 700;
-  color: #111827;
+  color: #fff;
   margin-bottom: 12px;
   line-height: 1.4;
 }
 .promise-step p {
   font-size: 13.5px;
-  color: #6B7280;
+  color: rgba(255, 255, 255, 0.78);
   line-height: 1.75;
 }
 
@@ -542,6 +568,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
 }
+.promise-arrow svg path { stroke: rgba(255, 255, 255, 0.55); }
 
 /* ==========================================
    회사소개  ─  좌텍스트 / 우이미지
