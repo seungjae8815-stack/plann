@@ -526,7 +526,7 @@ img { max-width: 100%; display: block; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: 56px;
   margin-top: 60px;
 }
 
@@ -1019,7 +1019,7 @@ img { max-width: 100%; display: block; }
   .hero-inner { padding: 56px var(--side) 80px; }
   .hero-title { font-size: 30px; }
   .guide-wrap { grid-template-columns: 1fr; gap: 40px; }
-  .promise-flow { flex-direction: column; gap: 28px; }
+  .promise-flow { flex-direction: column; gap: 72px; }
   .about-wrap { grid-template-columns: 1fr; gap: 40px; }
   .about-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
