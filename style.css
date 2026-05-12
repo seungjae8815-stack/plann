@@ -572,13 +572,6 @@ img { max-width: 100%; display: block; }
   line-height: 1.8;
 }
 
-.promise-arrow {
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-}
-.promise-arrow svg path { stroke: rgba(255, 255, 255, 0.55); }
-
 /* ==========================================
    회사소개  ─  좌텍스트 / 우이미지
 ========================================== */
@@ -1027,7 +1020,6 @@ img { max-width: 100%; display: block; }
   .hero-title { font-size: 30px; }
   .guide-wrap { grid-template-columns: 1fr; gap: 40px; }
   .promise-flow { flex-direction: column; gap: 28px; }
-  .promise-arrow { padding-bottom: 0; transform: rotate(90deg); }
   .about-wrap { grid-template-columns: 1fr; gap: 40px; }
   .about-grid { grid-template-columns: 1fr; }
   .why-grid { grid-template-columns: repeat(2, 1fr); }
