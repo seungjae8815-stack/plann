@@ -511,15 +511,15 @@ img { max-width: 100%; display: block; }
 /* 다크 톤 위 텍스트 컬러 + 크기 — 강조감 부여 */
 .sec-promise .sec-eyebrow {
   color: #93C5FD;
-  font-size: 14px;
+  font-size: 16px;
 }
 .sec-promise .sec-head h2 {
   color: #fff;
-  font-size: clamp(32px, 3.2vw, 46px);
+  font-size: clamp(38px, 3.8vw, 56px);
 }
 .sec-promise .sec-head p {
   color: rgba(255, 255, 255, 0.85);
-  font-size: clamp(16px, 1.2vw, 19px);
+  font-size: clamp(18px, 1.4vw, 22px);
 }
 
 .promise-flow {
@@ -532,7 +532,7 @@ img { max-width: 100%; display: block; }
 
 .promise-step {
   flex: 1;
-  max-width: 340px;
+  max-width: 380px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -559,16 +559,16 @@ img { max-width: 100%; display: block; }
 
 .promise-step h3 {
   font-family: 'Century Gothic', 'Inter', sans-serif;
-  font-size: clamp(22px, 1.7vw, 26px);
+  font-size: clamp(26px, 2.1vw, 32px);
   font-weight: 700;
   color: #fff;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   line-height: 1.35;
   letter-spacing: -0.01em;
 }
 .promise-step p {
-  font-size: clamp(14.5px, 1vw, 16px);
-  color: rgba(255, 255, 255, 0.82);
+  font-size: clamp(16px, 1.2vw, 19px);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.8;
 }
 
